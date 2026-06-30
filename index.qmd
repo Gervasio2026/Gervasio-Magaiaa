@@ -1,0 +1,23 @@
+---
+title: "Gervasio Castro Morais Magaia"
+description: "Sou doutorando em Engenharia Civil com foco em geotecnia."
+about:
+  template: trestles
+  image: PXL_20251231_153601847.PORTRAIT.ORIGINAL.jpg
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/in/gervasio-castro-m-magaia-a37717238
+    - icon: github
+      text: GitHub
+      url: https://github.com/Gervasio2026/PPEC0039
+    - icon: orcid
+      text: Orcid
+      url: https://orcid.org/0009-0004-4406-5815
+    - icon: lattes
+      text: Lattes
+      url: http://lattes.cnpq.br/1081392997196173
+    - icon: py-researchgate
+      text: ResearchGate
+      url: http://lattes.cnpq.br/1081392997196173
+---

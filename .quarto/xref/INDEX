@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "f66d4080"
+  },
+  "about.qmd": {
+    "about.html": "888985e8"
+  },
+  "lista_disciplina.qmd": {
+    "lista_disciplina.html": "3c22afa8"
+  },
+  "Notebooks/Aula_1.ipynb": {
+    "Aula_1.html": "2488141d"
+  },
+  "Notebooks/Aula_2.ipynb": {
+    "Aula_2.html": "e2957c91"
+  },
+  "Notebooks/Aula_3.ipynb": {
+    "Aula_3.html": "2bb47956"
+  },
+  "passo-a-passo.qmd": {
+    "passo-a-passo.html": "fd96459a"
+  }
+}
