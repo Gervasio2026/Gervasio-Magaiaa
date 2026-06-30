@@ -2,15 +2,15 @@
   {
     "listing": "/lista_disciplina.html",
     "items": [
-      "/Notebooks/Aula_9_de_Planejamento_de_Experimentos.html",
       "/Notebooks/Aula_6_de_Regressão_Linear_e_Correlação.html",
-      "/Notebooks/Aula_4_TESTES DE HIPÓTESES.html",
-      "/Notebooks/Aula_7_Amostragem_e_Análise_de_Variância_(ANOVA)_Aplicadas_à_Geotecnia.html",
       "/Notebooks/Aula_1_Amostragem.html",
       "/Notebooks/Aula_2_Distribuicao_de_Probabilidade.html",
+      "/Notebooks/Aula 5 - Teste_para_normalidade_e_homocedasticidade.html",
       "/Notebooks/Aula_8_Princípio Básico de Experimentação.html",
       "/Notebooks/Aula_3_Estimativa_de_parametros.html",
-      "/Notebooks/Aula 5 - Teste_para_normalidade_e_homocedasticidade.html"
+      "/Notebooks/Aula_7_Amostragem_e_Análise_de_Variância_(ANOVA)_Aplicadas_à_Geotecnia.html",
+      "/Notebooks/Aula_4_TESTES DE HIPÓTESES.html",
+      "/Notebooks/Aula_9_de_Planejamento_de_Experimentos.html"
     ]
   }
 ]
