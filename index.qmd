@@ -1,5 +1,5 @@
 ---
-title: "Gervasio Castro Morais Magaia"
+title: "GERVÁSIO CASTRO MORAIS MAGAIA"
 description: "Sou doutorando em Engenharia Civil com foco em geotecnia."
 about:
   template: trestles
@@ -21,3 +21,6 @@ about:
       text: ResearchGate
       url: http://lattes.cnpq.br/1081392997196173
 ---
+Olá! Seja bem-vindo ao meu portfólio.
+
+Meu nome é Gervasio C.M. Magaia, sou engenheiro de contrução, mestre em Recursos Naturais pela UFMS e, actualmente, doutorando em Engenharia Civil pela Universidade Federal da Bahia (UFBA). Minha trajetória acadêmica e profissional é dedicada à área de Geotecnia, campo no qual desenvolvo minhas pesquisas de doutorado junto ao Programa de Pós-Graduação em Engenharia Civil (PPEC/UFBA).

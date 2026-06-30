@@ -19,5 +19,32 @@
   },
   "passo-a-passo.qmd": {
     "passo-a-passo.html": "fd96459a"
+  },
+  "Notebooks/Aula 5 - Teste_para_normalidade_e_homocedasticidade.ipynb": {
+    "Aula 5 - Teste_para_normalidade_e_homocedasticidade.html": "e9168fcc"
+  },
+  "Notebooks/Aula_1_Amostragem.ipynb": {
+    "Aula_1_Amostragem.html": "68207de8"
+  },
+  "Notebooks/Aula_2_Distribuicao_de_Probabilidade.ipynb": {
+    "Aula_2_Distribuicao_de_Probabilidade.html": "d58f0619"
+  },
+  "Notebooks/Aula_3_Estimativa_de_parametros.ipynb": {
+    "Aula_3_Estimativa_de_parametros.html": "32adcd88"
+  },
+  "Notebooks/Aula_4_TESTES DE HIPÓTESES.ipynb": {
+    "Aula_4_TESTES DE HIPÓTESES.html": "c66950ba"
+  },
+  "Notebooks/Aula_6_de_Regressão_Linear_e_Correlação.ipynb": {
+    "Aula_6_de_Regressão_Linear_e_Correlação.html": "667c0875"
+  },
+  "Notebooks/Aula_7_Amostragem_e_Análise_de_Variância_(ANOVA)_Aplicadas_à_Geotecnia.ipynb": {
+    "Aula_7_Amostragem_e_Análise_de_Variância_(ANOVA)_Aplicadas_à_Geotecnia.html": "59f7eed7"
+  },
+  "Notebooks/Aula_8_Princípio Básico de Experimentação.ipynb": {
+    "Aula_8_Princípio Básico de Experimentação.html": "f076a365"
+  },
+  "Notebooks/Aula_9_de_Planejamento_de_Experimentos.ipynb": {
+    "Aula_9_de_Planejamento_de_Experimentos.html": "2b980ebf"
   }
 }

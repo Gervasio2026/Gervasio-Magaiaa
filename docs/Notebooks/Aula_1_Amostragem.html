@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Z-Score “Estatística Aplicada à Geotecnia e Erosão” – Projeto PPEC</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Projeto PPEC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lista_disciplina.html"> 
+<span class="menu-text">PPEC0039</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introdução-por-que-amostragem" id="toc-introdução-por-que-amostragem" class="nav-link active" data-scroll-target="#introdução-por-que-amostragem">1. Introdução: Por que Amostragem?</a></li>
+  <li><a href="#técnicas-de-amostragem-aplicadas-às-geotecnologias" id="toc-técnicas-de-amostragem-aplicadas-às-geotecnologias" class="nav-link" data-scroll-target="#técnicas-de-amostragem-aplicadas-às-geotecnologias">2. Técnicas de Amostragem aplicadas às Geotecnologias</a></li>
+  <li><a href="#dimensionamento-da-amostra-geotécnica" id="toc-dimensionamento-da-amostra-geotécnica" class="nav-link" data-scroll-target="#dimensionamento-da-amostra-geotécnica">3. Dimensionamento da Amostra Geotécnica</a></li>
+  <li><a href="#simulação-e-teste-de-normalidade" id="toc-simulação-e-teste-de-normalidade" class="nav-link" data-scroll-target="#simulação-e-teste-de-normalidade">4.Simulação e Teste de Normalidade</a></li>
+  <li><a href="#validação-de-parâmetros-de-erodibilidade-via-amostragem" id="toc-validação-de-parâmetros-de-erodibilidade-via-amostragem" class="nav-link" data-scroll-target="#validação-de-parâmetros-de-erodibilidade-via-amostragem">5. Validação de Parâmetros de Erodibilidade via Amostragem</a></li>
+  <li><a href="#integração-sig-e-cálculo-de-risco" id="toc-integração-sig-e-cálculo-de-risco" class="nav-link" data-scroll-target="#integração-sig-e-cálculo-de-risco">6.Integração SIG e Cálculo de Risco</a></li>
+  <li><a href="#mapeamento-espacial-simulação-sig" id="toc-mapeamento-espacial-simulação-sig" class="nav-link" data-scroll-target="#mapeamento-espacial-simulação-sig">7. Mapeamento Espacial (Simulação SIG)</a></li>
+  <li><a href="#artigos-relacionados" id="toc-artigos-relacionados" class="nav-link" data-scroll-target="#artigos-relacionados">Artigos Relacionados</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><strong>Z-Score “Estatística Aplicada à Geotecnia e Erosão”</strong></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução-por-que-amostragem" class="level2">
+<h2 class="anchored" data-anchor-id="introdução-por-que-amostragem">1. Introdução: Por que Amostragem?</h2>
+<p><em>A</em> <strong>amostragem</strong> é o processo de selecionar uma parte representativa de uma população para inferir características do todo. No estudo dos processos erosivos, a amostragem é essencial devido a: <strong>Economia e Tempo:</strong> É inviável realizar ensaios geotécnicos em cada metro quadrado. <strong>Operacionalidade:</strong> Permite o controle rigoroso da coleta de parâmetros como coesão e ângulo de atrito em pontos estratégicos. <strong>Confiabilidade:</strong> Quando bem planejada, garante que os dados de satélite coincidam com a realidade do solo.</p>
+</section>
+<section id="técnicas-de-amostragem-aplicadas-às-geotecnologias" class="level2">
+<h2 class="anchored" data-anchor-id="técnicas-de-amostragem-aplicadas-às-geotecnologias">2. Técnicas de Amostragem aplicadas às Geotecnologias</h2>
+<p><strong>Para correlacionar imagens de satélite com parâmetros físicos</strong>, alguns pesuisadores utilizaram diferentes métodos: <strong>Amostragem Estratificada Proporcional:</strong> que consiste em dividir a bacia em subgrupos homogêneos (estratos) baseados em mapas de solo ou declividade. Isso gera resultados mais precisos que uma amostra aleatória simples ao lidar com terrenos heterogêneos. <strong>Amostragem Sistemática:</strong> Utilizada para validar modelos de erosão (como o RUSLE) criando uma grade regular de pontos de controle sobre a imagem de satélite. <strong>Amostragem por Julgamento</strong> (Não Aleatória): Escolha de pontos “típicos” ou críticos, como encostas com histórico conhecido de deslizamento ou voçorocas.</p>
+</section>
+<section id="dimensionamento-da-amostra-geotécnica" class="level2">
+<h2 class="anchored" data-anchor-id="dimensionamento-da-amostra-geotécnica">3. Dimensionamento da Amostra Geotécnica</h2>
+<p>Para garantir que sua previsão de erosão seja estatisticamente válida, o tamanho da amostra (n) deve ser calculado considerando um erro tolerável (E):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="data:image/png;base64,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g3BEjinsevbsadOnT7d//vnHLrroInv55Zft5JNPDt7xr2XLltndd99t48aNs8qVKwetQPJgzhE59ueff9rGjRtt2LBhblitANRw2+e3336z8847z84555ygBUguhCNybP369VaiRAlr1qyZ1a9f381FTp06NWP4HG3hwoWWkpJihQsXDlqA5EI4IscWL15s1apVs9NOO83atGnj2ubMmWNr1qxxz0O7du2yn376yS655JKgBUg+hCNyRL3DtLQ012MUfdRc4vbt223atGmuLbRp0yYXkBUqVAhajjx9P++995499NBDtnTpUteL1eOHH35ww/4BAwbYJ5984u3VAjlBOCJHNN/4+++/29lnn+1elypVyq655hr3/P3333efD61cudKtUOs9eUEhOGnSJPvmm2/s+OOPt9atW9uMGTOsb9++NmLECKtTp46VL1/eunTpYgMHDiQgkSuEI3JE842lS5d29YqhFi1auDlIDasXLFgQtJp9/vnnVrt27Tybb/zll1/c79G1a1fXgz1w4IDdeeedVq9ePbc6fuWVV7rSIYXkrFmzbPPmzcGv/Jd6tqrH/Pnnn93KOxCLcESOaL6xUqVKVrRo0aDF3LC6UaNG7vmUKVNs7969GfONtWrVcu2HQ79OQ+GdO3cGLX6qpaxSpYrrmaqXKpoDve666zLqKNVbVH1mLPU633rrLbvtttvs119/tddff926d+9uO3bsCN4BHEQ44j8paL799lu3IyaaeoY33HCDCyT1HJcvX+5KeLZt2+aC9HCoZ3rjjTdaamqq9evX75BD4erVq1unTp1c+Cm09X0oGKN7qipWX7dunRten3jiiUGruTnJsWPH2tChQ92v0VD8zDPPtCeffNIFJxAiHPGfwvrGc889N2j5l7YEqpeo7YIqCFf4lCtXLsu2wsOh3qnmErOjwNNDw+Xvv//eBXFsofkXX3zhtjLWrVs3Uzh++umndsIJJ7hAFAW7VuDVY9VCEhAiHPGfwvpG3wKLdse0atXKPVdZz/jx43M136iVbQ1xn3vuORs8eHCOthlqrlP7vTXE1vcXUo9y5syZ7muEq+uinqGG5ArH6O9Pi0fqaarXC4QIR/ynsL6xePHiQUtmWgCpWLGiK+vRCnJu5htFX6NJkybZ/j6xtENHgdegQYNMYae5yyVLlrjvQw/1ehW66hlqxd1nz549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" class="img-fluid figure-img"></p>
+<figcaption>Estatistica.png</figcaption>
+</figure>
+</div>
+<p>Onde <span class="math inline">\(N\)</span> é o número total de pontos possíveis na área de estudo.</p>
+</section>
+<section id="simulação-e-teste-de-normalidade" class="level2">
+<h2 class="anchored" data-anchor-id="simulação-e-teste-de-normalidade">4.Simulação e Teste de Normalidade</h2>
+<p>Antes de qualquer análise, devemos verificar se os dados seguem uma Distribuição Normal. Isso é fundamental para garantir a Confiabilidade dos Dados.</p>
+<div id="cell-12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuração visual</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Simulação de Dados de Campo (ex: Coesão em kPa na Bacia do Recôncavo)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Supomos 150 amostras coletadas via plano de amostragem estratificada</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>media_real <span class="op">=</span> <span class="fl">22.5</span>  <span class="co"># kPa</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>desvio_real <span class="op">=</span> <span class="fl">6.2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>coesao_solo <span class="op">=</span> np.random.normal(media_real, desvio_real, <span class="dv">150</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um DataFrame</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'Coesao_kPa'</span>: coesao_solo})</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Visualização: Histogramas e Boxplot (Identificação de Outliers/Erros)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'Coesao_kPa'</span>], kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'green'</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'Distribuição da Coesão do Solo'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df[<span class="st">'Coesao_kPa'</span>], color<span class="op">=</span><span class="st">'lightgreen'</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'Boxplot: Identificação de Outliers'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Teste de Shapiro-Wilk (Validação Estatística)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>stat, p_valor <span class="op">=</span> stats.shapiro(df[<span class="st">'Coesao_kPa'</span>])</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'P-valor: </span><span class="sc">{</span>p_valor<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p_valor <span class="op">&gt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Conclusão: Os dados seguem uma Distribuição Normal."</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Conclusão: Os dados NÃO seguem uma Distribuição Normal."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="validação-de-parâmetros-de-erodibilidade-via-amostragem" class="level2">
+<h2 class="anchored" data-anchor-id="validação-de-parâmetros-de-erodibilidade-via-amostragem">5. Validação de Parâmetros de Erodibilidade via Amostragem</h2>
+<p>Alguns trabalho que usaram e fizeram validação da erodibilidade via amostragem segue o seguinte link https://sjar.revistas.csic.es/index.php/sjar/article/view/2046/1536</p>
+<div id="cell-14" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. CONFIGURAÇÃO DO PLANO DE AMOSTRAGEM</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos os estratos (tipos de solo) e a quantidade de amostras por tipo</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>estratos_solo <span class="op">=</span> {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Argissolo (Encostas)'</span>: <span class="dv">15</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Latossolo (Platôs)'</span>: <span class="dv">12</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Neossolo (Áreas de Erosão)'</span>: <span class="dv">10</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Gleissolo (Zonas Úmidas)'</span>: <span class="dv">8</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>data_list <span class="op">=</span> []</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. SIMULAÇÃO DE COLETA DE PARÂMETROS GEOTÉCNICOS</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando a variabilidade da Coesão (c') e Ângulo de Atrito (phi)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">7</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> solo, n_amostras <span class="kw">in</span> estratos_solo.items():</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_amostras):</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Gerando dados com médias diferentes para cada tipo de solo</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'Argissolo'</span> <span class="kw">in</span> solo:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            coesao <span class="op">=</span> np.random.normal(<span class="dv">25</span>, <span class="dv">4</span>) <span class="co"># Média 25 kPa</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            atrito <span class="op">=</span> np.random.normal(<span class="dv">22</span>, <span class="dv">2</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="st">'Latossolo'</span> <span class="kw">in</span> solo:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            coesao <span class="op">=</span> np.random.normal(<span class="dv">15</span>, <span class="dv">3</span>) <span class="co"># Mais arenoso/menos coeso</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            atrito <span class="op">=</span> np.random.normal(<span class="dv">28</span>, <span class="dv">3</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>            coesao <span class="op">=</span> np.random.normal(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>            atrito <span class="op">=</span> np.random.normal(<span class="dv">18</span>, <span class="dv">4</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        data_list.append({</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Tipo_Solo'</span>: solo,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Amostra_ID'</span>: <span class="ss">f"</span><span class="sc">{</span>solo[:<span class="dv">3</span>]<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Coesao_kPa'</span>: <span class="bu">round</span>(coesao, <span class="dv">2</span>),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Angulo_Atrito_Deg'</span>: <span class="bu">round</span>(atrito, <span class="dv">2</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o DataFrame</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>df_reconcavo <span class="op">=</span> pd.DataFrame(data_list)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. ANÁLISE ESTATÍSTICA DESCRITIVA</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Resumo Estatístico por Estrato de Solo ---"</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>resumo <span class="op">=</span> df_reconcavo.groupby(<span class="st">'Tipo_Solo'</span>)[<span class="st">'Coesao_kPa'</span>].agg([<span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'count'</span>]).rename(columns<span class="op">=</span>{<span class="st">'mean'</span>: <span class="st">'Média Coesão'</span>, <span class="st">'std'</span>: <span class="st">'Desvio Padrão'</span>, <span class="st">'count'</span>: <span class="st">'Nº Amostras'</span>})</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resumo)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. VISUALIZAÇÃO PARA PLANEJAMENTO DE EXPERIMENTOS</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot para ver a dispersão e identificar possíveis "Outliers"</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">'Tipo_Solo'</span>, y<span class="op">=</span><span class="st">'Coesao_kPa'</span>, data<span class="op">=</span>df_reconcavo, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>sns.stripplot(x<span class="op">=</span><span class="st">'Tipo_Solo'</span>, y<span class="op">=</span><span class="st">'Coesao_kPa'</span>, data<span class="op">=</span>df_reconcavo, color<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Variabilidade da Coesão Geotécnica por Estrato'</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Coesão (kPa)'</span>)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Unidade Amostral (Solo)'</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. EXPORTAÇÃO</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co"># df_reconcavo.to_csv('amostras_geotecnicas_reconcavo.csv', index=False)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="integração-sig-e-cálculo-de-risco" class="level2">
+<h2 class="anchored" data-anchor-id="integração-sig-e-cálculo-de-risco">6.Integração SIG e Cálculo de Risco</h2>
+<p>Com a amostra validada, definimos um limiar crítico. Na geotecnia, se a coesão for muito baixa (ex: &lt; 10 kPa), o solo é altamente suscetível à erosão hídrica. Acesse o link do trabalho https://www.mdpi.com/2073-4441/13/24/3621?utm_source=chatgpt.com</p>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Parâmetros da Amostra</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>media_amostral <span class="op">=</span> df[<span class="st">'Coesao_kPa'</span>].mean()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>desvio_amostral <span class="op">=</span> df[<span class="st">'Coesao_kPa'</span>].std()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>limiar_critico <span class="op">=</span> <span class="fl">10.0</span> <span class="co"># Limiar de segurança geotécnica</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Cálculo da Probabilidade de Risco (Área sob a curva)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>probabilidade_risco <span class="op">=</span> norm.cdf(limiar_critico, media_amostral, desvio_amostral)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Risco de Erosão nesta área: </span><span class="sc">{</span>probabilidade_risco<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Visualização da 'Zona de Perigo'</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(media_amostral <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>desvio_amostral, media_amostral <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>desvio_amostral, <span class="dv">200</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.plot(x, norm.pdf(x, media_amostral, desvio_amostral), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Curva Normal Ajustada'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>x_risco <span class="op">=</span> np.linspace(media_amostral <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>desvio_amostral, limiar_critico, <span class="dv">100</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x_risco, norm.pdf(x_risco, media_amostral, desvio_amostral), color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Zona de Alto Risco'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Identificação Estatística de Áreas Propensas à Erosão'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Coesão (kPa)'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="mapeamento-espacial-simulação-sig" class="level2">
+<h2 class="anchored" data-anchor-id="mapeamento-espacial-simulação-sig">7. Mapeamento Espacial (Simulação SIG)</h2>
+<p>Integração da estatística com a geotecnologia para gerar um mapa de risco.</p>
+<div id="cell-19" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.ndimage <span class="im">import</span> gaussian_filter</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação de grade 50x50 (Pixels de um Satélite/SIG)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mapa_dim <span class="op">=</span> (<span class="dv">50</span>, <span class="dv">50</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>mapa_risco <span class="op">=</span> gaussian_filter(np.random.rand(<span class="op">*</span>mapa_dim), sigma<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>mapa_risco_final <span class="op">=</span> (mapa_risco <span class="op">-</span> mapa_risco.<span class="bu">min</span>()) <span class="op">/</span> (mapa_risco.<span class="bu">max</span>() <span class="op">-</span> mapa_risco.<span class="bu">min</span>())</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">7</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.imshow(mapa_risco_final, cmap<span class="op">=</span><span class="st">'RdYlGn_r'</span>, origin<span class="op">=</span><span class="st">'lower'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">'Probabilidade de Erosão'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mapa de Risco de Erosão Geoprocessado'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A análise de variabilidade espacial é importante porque a erosão do solo não ocorre de forma uniforme, variando conforme relevo, tipo de solo e uso da terra. Com técnicas geoestatísticas como <strong>krigagem</strong>, <strong>semivariograma e IDW</strong>, é possível transformar dados pontuais em mapas contínuos, identificando áreas mais críticas. Isso melhora a precisão de modelos como o <strong>RUSLE</strong>, apoia decisões geotécnicas e contribui para o planejamento ambiental e a prevenção de riscos</p>
+<div id="cell-21" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar bibliotecas</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install numpy pandas matplotlib scikit<span class="op">-</span>learn pykrige</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pykrige.ok <span class="im">import</span> OrdinaryKriging</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> cdist</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. GERAR DADOS SIMULADOS</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>n_points <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">100</span>, n_points)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">100</span>, n_points)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando perda de solo (RUSLE-like)</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x <span class="op">+</span> <span class="fl">0.3</span> <span class="op">*</span> y <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n_points)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: x, <span class="st">'y'</span>: y, <span class="st">'z'</span>: z})</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. SEMIVARIOGRAMA (SIMPLES)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> semivariogram(x, y, z, max_dist, n_bins):</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.column_stack((x, y))</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    dist <span class="op">=</span> cdist(coords, coords)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    diff <span class="op">=</span> (z[:, <span class="va">None</span>] <span class="op">-</span> z[<span class="va">None</span>, :])<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    bins <span class="op">=</span> np.linspace(<span class="dv">0</span>, max_dist, n_bins)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> []</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(bins)<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> (dist <span class="op">&gt;=</span> bins[i]) <span class="op">&amp;</span> (dist <span class="op">&lt;</span> bins[i<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        gamma.append(np.mean(diff[mask]))</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> bins[:<span class="op">-</span><span class="dv">1</span>], gamma</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>distances, gamma <span class="op">=</span> semivariogram(x, y, z, max_dist<span class="op">=</span><span class="dv">100</span>, n_bins<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>plt.plot(distances, gamma, <span class="st">'o-'</span>)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Semivariograma"</span>)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Distância"</span>)</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Semivariância"</span>)</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. KRIGAGEM</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>gridx <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">50</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>gridy <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">50</span>)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>OK <span class="op">=</span> OrdinaryKriging(x, y, z,</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>                     variogram_model<span class="op">=</span><span class="st">'linear'</span>,</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>                     verbose<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>z_krig, ss <span class="op">=</span> OK.execute(<span class="st">'grid'</span>, gridx, gridy)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>plt.imshow(z_krig, origin<span class="op">=</span><span class="st">'lower'</span>, extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">100</span>))</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, c<span class="op">=</span>z, edgecolor<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Mapa por Krigagem"</span>)</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">"Perda de solo"</span>)</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. IDW</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> idw(x, y, z, xi, yi, power<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    dist <span class="op">=</span> np.sqrt((x <span class="op">-</span> xi)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y <span class="op">-</span> yi)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    weights <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (dist<span class="op">**</span>power <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(weights <span class="op">*</span> z) <span class="op">/</span> np.<span class="bu">sum</span>(weights)</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>grid_idw <span class="op">=</span> np.zeros((<span class="dv">50</span>, <span class="dv">50</span>))</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>        grid_idw[i, j] <span class="op">=</span> idw(x, y, z, gridx[i], gridy[j])</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>plt.imshow(grid_idw, origin<span class="op">=</span><span class="st">'lower'</span>, extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">100</span>))</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, c<span class="op">=</span>z, edgecolor<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Mapa por IDW"</span>)</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">"Perda de solo"</span>)</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="artigos-relacionados" class="level2">
+<h2 class="anchored" data-anchor-id="artigos-relacionados">Artigos Relacionados</h2>
+<ol type="1">
+<li>DOI: https://doi.org/10.5424/sjar/20110903-229-10<br>
+</li>
+<li>https://link.springer.com/article/10.1007/s12665-025-12271-8?utm_source=chatgpt.com<br>
+</li>
+<li>https://www.mdpi.com/1999-4907/15/6/1039?utm_source=chatgpt.com</li>
+<li>https://www.sciencedirect.com/science/article/pi S2095633925000930</li>
+<li>https://onlinelibrary.wiley.com/doi/10.1002/esp.70019</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
