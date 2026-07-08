@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="Este notebook expande os fundamentos da experimentação ao abordar o Planejamento de Experimentos (DOE - Design of Experiments). O foco principal é entender como avaliar o impacto simultâneo de múltiplos fatores (variáveis independentes) e suas interações sobre uma ou mais variáveis de resposta, superando a abordagem tradicional e ineficiente de testar “um fator por vez”. Na pesquisa geotécnica e engenharia de materiais, Planejamento de Experimentos é uma ferramenta indispensável para a otimização de processos. Ele permite determinar, de forma estatisticamente rigorosa, a combinação ideal de variáveis para maximizar o desempenho de um material — como encontrar a proporção exata de um aditivo, o teor de umidade e a energia de compactação que resultam na máxima resistência mecânica de um solo estabilizado.">
 
-<title>aula_9_de_planejamento_de_experimentos – Projeto PPEC</title>
+<title>Aula 9 - Introdução – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -169,9 +171,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 9 - Introdução</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Este notebook expande os fundamentos da experimentação ao abordar o Planejamento de Experimentos (DOE - Design of Experiments). O foco principal é entender como avaliar o impacto simultâneo de múltiplos fatores (variáveis independentes) e suas interações sobre uma ou mais variáveis de resposta, superando a abordagem tradicional e ineficiente de testar “um fator por vez”. Na pesquisa geotécnica e engenharia de materiais, Planejamento de Experimentos é uma ferramenta indispensável para a otimização de processos. Ele permite determinar, de forma estatisticamente rigorosa, a combinação ideal de variáveis para maximizar o desempenho de um material — como encontrar a proporção exata de um aditivo, o teor de umidade e a energia de compactação que resultam na máxima resistência mecânica de um solo estabilizado.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-03-16</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><a href="https://colab.research.google.com/github/Ludmilla-Borges/PPEC0039/blob/main/Aula_de_Planejamento_de_Experimentos.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -235,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>statsmodels.stats.multicomp - Análises estatísticas avançadas</li>
 <li>matplotlib - Criação de gráficos</li>
 </ul>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="a0f37482-9402-41b0-af1a-4e2e0130f8b8">
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="a0f37482-9402-41b0-af1a-4e2e0130f8b8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -465,7 +499,7 @@ Existe diferença significativa entre os métodos.
 <li>statsmodels.stats.multicomp - Análises estatísticas avançadas</li>
 <li>matplotlib - Criação de gráficos</li>
 </ul>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="18657ded-4fb9-4429-d003-b779e72c56ad">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="18657ded-4fb9-4429-d003-b779e72c56ad">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -721,7 +755,7 @@ Notes:
 <li>matplotlib - Criação de gráficos</li>
 <li>seaborn - Criação de gráficos</li>
 </ul>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="eb70a3e3-0df2-4eb0-fa08-65524e89391b">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="eb70a3e3-0df2-4eb0-fa08-65524e89391b">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ==============================</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 📦 BIBLIOTECAS</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ==============================</span></span>

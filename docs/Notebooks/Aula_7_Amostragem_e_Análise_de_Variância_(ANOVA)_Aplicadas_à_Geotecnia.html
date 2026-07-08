@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="primeira aula">
 
-<title>aula_7_amostragem_e_análise_de_variância_(anova_aplicadas_à_geotecnia – Projeto PPEC</title>
+<title>Aula 1 - Introdução – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -192,9 +194,41 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 1 - Introdução</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    primeira aula
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-03-16</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><a href="https://colab.research.google.com/github/Gervasio2026/PPEC0039/blob/main/A_03_Amostragem_e_An%C3%A1lise_de_Vari%C3%A2ncia_(ANOVA)_Aplicadas_%C3%A0_Geotecnia.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -217,7 +251,7 @@ window.Quarto = {
 <p><strong><em>Coesão de Solos na Bacia do Recôncavo</em></strong></p>
 <p>Descrição do ProblemaForam realizados ensaios de cisalhamento direto no Laboratório de Geotecnia Ambiental (UFBA) para medir a Coesão do Solo (<span class="math inline">\(c'\)</span> em kPa) — parâmetro geotécnico vital contra a erosão — em 3 formações geológicas distintas da Bacia do Recôncavo: Formação Marizal (A), Formação São Sebastião (B) e Depósitos Quaternários (C). Aplique a ANOVA com nível de significância <span class="math inline">\(\alpha = 0,05\)</span> para verificar se as médias de coesão diferem entre si.</p>
 <p>Dados Coletados (<span class="math inline">\(n = 5\)</span> para cada grupo):Formação Marizal (A): <span class="math inline">\([12, 14, 11, 15, 13]\)</span> kPaFormação São Sebastião (B): <span class="math inline">\([24, 22, 26, 25, 23]\)</span> kPaDepósitos Quaternários (C): <span class="math inline">\([17, 19, 18, 21, 20]\)</span> kPaFormulação das Hipóteses (Páginas 7 e 8)Hipótese Nula (<span class="math inline">\(H_0\)</span>): <span class="math inline">\(\mu_A = \mu_B = \mu_C\)</span> (As médias de coesão são estatisticamente iguais; o tratamento/fator geológico não tem efeito na resistência).Hipótese Alternativa (<span class="math inline">\(H_1\)</span>): Pelo menos uma média é diferente das outras (Não significa que todas as médias sejam diferentes entre si, alguns pares podem ser iguais).</p>
-<div id="cell-10" class="cell">
+<div id="cell-11" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>

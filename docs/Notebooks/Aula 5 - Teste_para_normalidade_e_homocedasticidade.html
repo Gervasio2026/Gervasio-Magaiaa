@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="Este notebook aborda as etapas críticas de verificação das Premissas Estatísticas necessárias para a aplicação segura de testes paramétricos tradicionais (como o Teste t e a ANOVA). Antes de realizar análises comparativas ou modelos de regressão na engenharia, é fundamental garantir que os dados experimentais atendam aos critérios de Normalidade e Homocedasticidade (homogeneidade das variâncias), sob o risco de gerar conclusões inválidas ou superestimadas. No campo da geotecnia e recursos naturais, essas validações garantem que a variabilidade natural de ensaios de campo ou laboratório não seja confundida com erros de modelagem.">
 
-<title>aula-5---teste_para_normalidade_e_homocedasticidade – Projeto PPEC</title>
+<title>Aula 5 - Introdução – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -183,9 +185,41 @@ window.Quarto = {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 5 - Introdução</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Este notebook aborda as etapas críticas de verificação das Premissas Estatísticas necessárias para a aplicação segura de testes paramétricos tradicionais (como o Teste t e a ANOVA). Antes de realizar análises comparativas ou modelos de regressão na engenharia, é fundamental garantir que os dados experimentais atendam aos critérios de Normalidade e Homocedasticidade (homogeneidade das variâncias), sob o risco de gerar conclusões inválidas ou superestimadas. No campo da geotecnia e recursos naturais, essas validações garantem que a variabilidade natural de ensaios de campo ou laboratório não seja confundida com erros de modelagem.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 16, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><strong>TESTES DE NORMALIDADE</strong></p>
@@ -214,7 +248,7 @@ window.Quarto = {
 <p>1-Simula um perfil de amplitudes de GPR que decai com o tempo (gerando heterocedasticidade) e possui uma anomalia forte profunda.</p>
 <p>2-Aplica uma correção de ganho (SEC - Spreading and Exponential Compensation) para tentar estabilizar a variância (buscar a homocedasticidade).</p>
 <p>3-Roda os testes de Shapiro-Wilk e Levene nas janelas de tempo para verificar se a correção funcionou.</p>
-<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1779763810695,&quot;user_tz&quot;:180,&quot;elapsed&quot;:2204,&quot;user&quot;:{&quot;displayName&quot;:&quot;Verusca Almeida&quot;,&quot;userId&quot;:&quot;15664539291698970701&quot;}}}" data-outputid="63166eb0-18bc-475a-9d07-c04e036be368" data-execution_count="1">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:2204,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1779763810695,&quot;user&quot;:{&quot;displayName&quot;:&quot;Verusca Almeida&quot;,&quot;userId&quot;:&quot;15664539291698970701&quot;},&quot;user_tz&quot;:180}}" data-outputid="63166eb0-18bc-475a-9d07-c04e036be368" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>

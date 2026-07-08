@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="Este notebook apresenta a teoria e a prática dos Testes de Hipóteses, uma das ferramentas mais poderosas da inferência estatística. O objetivo é fornecer uma metodologia objetiva e matemática para validar ou rejeitar afirmações sobre parâmetros populacionais a partir de dados amostrais, minimizando a chance de tomar decisões erradas devido ao acaso.">
 
-<title>aula_4_testes-de-hipóteses – Projeto PPEC</title>
+<title>Aula 4 - Introdução – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -192,9 +194,41 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 4 - Introdução</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Este notebook apresenta a teoria e a prática dos Testes de Hipóteses, uma das ferramentas mais poderosas da inferência estatística. O objetivo é fornecer uma metodologia objetiva e matemática para validar ou rejeitar afirmações sobre parâmetros populacionais a partir de dados amostrais, minimizando a chance de tomar decisões erradas devido ao acaso.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-03-16</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><a href="https://colab.research.google.com/github/Gervasio2026/PPEC0039/blob/main/Untitled1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -233,7 +267,7 @@ window.Quarto = {
 <p><span class="math inline">\(H_1\)</span>: O tipo de erosão depende da vegetação (existe uma associação)</p>
 <p>##<strong>Exemplos Práticos</strong></p>
 <p><strong>1.</strong> Vamos imaginar que estamos testando a resistência à compressão de uma nova istura de <em>solo-cimento</em> para estabilização de <em>taludes</em>. O valor de referência é <strong>5.0 MPa</strong>. Suas amostras de laboratório deram uma média ligeiramente inferior. <strong>Vamos testar se essa diferença é significativa.</strong></p>
-<div id="cell-16" class="cell">
+<div id="cell-17" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -303,7 +337,7 @@ window.Quarto = {
 </div>
 <p><strong>2.Problema</strong> Suponhamos que esteja actuando como engenheiro fiscal em uma obra de pavimentação. A norma técnica local exige que a base de solo-cimento tenha uma resistência média à compressão simples (<span class="math inline">\(\mu\)</span>) de, no mínimo, 2,1 MPa. Para validar o lote recém-executado, Foi colectando 8 amostras aleatórias no trecho.</p>
 <p><strong>Pedido</strong> Verifique estatisticamente, com 95% de confiança (<span class="math inline">\(\alpha = 0,05\)</span>), se o lote pode ser aceito ou se deve ser rejeitado por inconformidade.</p>
-<div id="cell-18" class="cell">
+<div id="cell-19" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -366,7 +400,7 @@ window.Quarto = {
 <p>Imaginameos que, os pos-graduandos que actuam no Laboratório de Geotecnia Ambiental (UFBA), Estejam estudando se a cobertura vegetal (Grama vs.&nbsp;Solo Exposto) altera o tipo de erosão predominante (Laminar vs.&nbsp;Sulcos) em encostas sedimentares. Foram analisados 100 pontos críticos de encostas.</p>
 <p><strong>Pedido</strong></p>
 <p>Se pede para determinar se o tipo de processo erosivo é independente da cobertura vegetal ou se existe uma dependência estatística entre essas variáveis, utilizando o Teste Qui-Quadrado.</p>
-<div id="cell-20" class="cell">
+<div id="cell-21" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>

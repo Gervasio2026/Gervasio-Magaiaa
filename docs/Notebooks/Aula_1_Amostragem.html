@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-03-16">
+<meta name="description" content="Este notebook apresenta os conceitos fundamentais e as técnicas de Amostragem aplicadas à engenharia e à pesquisa experimental. O objetivo principal é compreender como selecionar subconjuntos representativos de uma população para garantir que as inferências estatísticas e os ensaios tecnológicos subsequentes possuam validade científica e menor margem de erro possível.">
 
-<title>Z-Score “Estatística Aplicada à Geotecnia e Erosão” – Projeto PPEC</title>
+<title>Amostragem – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -184,7 +186,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introdução-por-que-amostragem" id="toc-introdução-por-que-amostragem" class="nav-link active" data-scroll-target="#introdução-por-que-amostragem">1. Introdução: Por que Amostragem?</a></li>
+  <li><a href="#z-score-estatística-aplicada-à-geotecnia-e-erosão" id="toc-z-score-estatística-aplicada-à-geotecnia-e-erosão" class="nav-link active" data-scroll-target="#z-score-estatística-aplicada-à-geotecnia-e-erosão"><strong>Z-Score “Estatística Aplicada à Geotecnia e Erosão”</strong></a>
+  <ul class="collapse">
+  <li><a href="#introdução-por-que-amostragem" id="toc-introdução-por-que-amostragem" class="nav-link" data-scroll-target="#introdução-por-que-amostragem">1. Introdução: Por que Amostragem?</a></li>
   <li><a href="#técnicas-de-amostragem-aplicadas-às-geotecnologias" id="toc-técnicas-de-amostragem-aplicadas-às-geotecnologias" class="nav-link" data-scroll-target="#técnicas-de-amostragem-aplicadas-às-geotecnologias">2. Técnicas de Amostragem aplicadas às Geotecnologias</a></li>
   <li><a href="#dimensionamento-da-amostra-geotécnica" id="toc-dimensionamento-da-amostra-geotécnica" class="nav-link" data-scroll-target="#dimensionamento-da-amostra-geotécnica">3. Dimensionamento da Amostra Geotécnica</a></li>
   <li><a href="#simulação-e-teste-de-normalidade" id="toc-simulação-e-teste-de-normalidade" class="nav-link" data-scroll-target="#simulação-e-teste-de-normalidade">4.Simulação e Teste de Normalidade</a></li>
@@ -192,6 +196,7 @@ window.Quarto = {
   <li><a href="#integração-sig-e-cálculo-de-risco" id="toc-integração-sig-e-cálculo-de-risco" class="nav-link" data-scroll-target="#integração-sig-e-cálculo-de-risco">6.Integração SIG e Cálculo de Risco</a></li>
   <li><a href="#mapeamento-espacial-simulação-sig" id="toc-mapeamento-espacial-simulação-sig" class="nav-link" data-scroll-target="#mapeamento-espacial-simulação-sig">7. Mapeamento Espacial (Simulação SIG)</a></li>
   <li><a href="#artigos-relacionados" id="toc-artigos-relacionados" class="nav-link" data-scroll-target="#artigos-relacionados">Artigos Relacionados</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -200,14 +205,30 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Z-Score “Estatística Aplicada à Geotecnia e Erosão”</strong></h1>
-</div>
+<h1 class="title">Amostragem</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Este notebook apresenta os conceitos fundamentais e as técnicas de Amostragem aplicadas à engenharia e à pesquisa experimental. O objetivo principal é compreender como selecionar subconjuntos representativos de uma população para garantir que as inferências estatísticas e os ensaios tecnológicos subsequentes possuam validade científica e menor margem de erro possível.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 16, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -217,6 +238,8 @@ window.Quarto = {
 </header>
 
 
+<section id="z-score-estatística-aplicada-à-geotecnia-e-erosão" class="level1">
+<h1><strong>Z-Score “Estatística Aplicada à Geotecnia e Erosão”</strong></h1>
 <section id="introdução-por-que-amostragem" class="level2">
 <h2 class="anchored" data-anchor-id="introdução-por-que-amostragem">1. Introdução: Por que Amostragem?</h2>
 <p><em>A</em> <strong>amostragem</strong> é o processo de selecionar uma parte representativa de uma população para inferir características do todo. No estudo dos processos erosivos, a amostragem é essencial devido a: <strong>Economia e Tempo:</strong> É inviável realizar ensaios geotécnicos em cada metro quadrado. <strong>Operacionalidade:</strong> Permite o controle rigoroso da coleta de parâmetros como coesão e ângulo de atrito em pontos estratégicos. <strong>Confiabilidade:</strong> Quando bem planejada, garante que os dados de satélite coincidam com a realidade do solo.</p>
@@ -497,6 +520,7 @@ window.Quarto = {
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
