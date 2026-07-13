@@ -2,15 +2,15 @@
   {
     "listing": "/lista_disciplina.html",
     "items": [
-      "/Notebooks/Aula_1_Amostragem.html",
-      "/Notebooks/Aula_2_Distribuicao_de_Probabilidade.html",
-      "/Notebooks/Aula_3_Estimativa_de_parametros.html",
+      "/Notebooks/Aula_1_amostragem.html",
+      "/Notebooks/Aula_2_distribuicao_de_probabilidade.html",
+      "/Notebooks/Aula_3_estimativa_de_parametros.html",
       "/Notebooks/Aula_4_teste_de_hipotese.html",
-      "/Notebooks/Aula 5 - Teste_para_normalidade_e_homocedasticidade.html",
-      "/Notebooks/Aula_6_de_Regressão.html",
-      "/Notebooks/Aula_8_Principio Basico de Experimentacao.html",
-      "/Notebooks/Aula_9_de_Planejamento_de_Experimentos.html",
-      "/Notebooks/Aula_7_ANOVA.html"
+      "/Notebooks/Aula_5_teste_de_norma_e_homoced.html",
+      "/Notebooks/Aula_6_Regressao.html",
+      "/Notebooks/Aula_7_anova.html",
+      "/Notebooks/Aula_8_principio_basico_de_experimentacao.html",
+      "/Notebooks/Aula_9_planejamento_de_experimentos.html"
     ]
   }
 ]
