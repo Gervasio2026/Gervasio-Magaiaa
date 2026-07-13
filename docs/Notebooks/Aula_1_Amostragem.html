@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-03-16">
-<meta name="description" content="Este notebook apresenta os conceitos fundamentais e as técnicas de Amostragem aplicadas à engenharia e à pesquisa experimental. O objetivo principal é compreender como selecionar subconjuntos representativos de uma população para garantir que as inferências estatísticas e os ensaios tecnológicos subsequentes possuam validade científica e menor margem de erro possível.">
+<meta name="dcterms.date" content="2026-07-13">
+<meta name="description" content="técnicas de Amostragem">
 
 <title>Amostragem – Projeto PPEC</title>
 <style>
@@ -215,7 +215,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Este notebook apresenta os conceitos fundamentais e as técnicas de Amostragem aplicadas à engenharia e à pesquisa experimental. O objetivo principal é compreender como selecionar subconjuntos representativos de uma população para garantir que as inferências estatísticas e os ensaios tecnológicos subsequentes possuam validade científica e menor margem de erro possível.
+    técnicas de Amostragem
   </div>
 </div>
 
@@ -226,7 +226,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 16, 2023</p>
+      <p class="date">July 13, 2026</p>
     </div>
   </div>
   
@@ -262,7 +262,7 @@ window.Quarto = {
 <section id="simulação-e-teste-de-normalidade" class="level2">
 <h2 class="anchored" data-anchor-id="simulação-e-teste-de-normalidade">4.Simulação e Teste de Normalidade</h2>
 <p>Antes de qualquer análise, devemos verificar se os dados seguem uma Distribuição Normal. Isso é fundamental para garantir a Confiabilidade dos Dados.</p>
-<div id="cell-12" class="cell">
+<div id="cell-13" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -305,7 +305,7 @@ window.Quarto = {
 <section id="validação-de-parâmetros-de-erodibilidade-via-amostragem" class="level2">
 <h2 class="anchored" data-anchor-id="validação-de-parâmetros-de-erodibilidade-via-amostragem">5. Validação de Parâmetros de Erodibilidade via Amostragem</h2>
 <p>Alguns trabalho que usaram e fizeram validação da erodibilidade via amostragem segue o seguinte link https://sjar.revistas.csic.es/index.php/sjar/article/view/2046/1536</p>
-<div id="cell-14" class="cell">
+<div id="cell-15" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -374,7 +374,7 @@ window.Quarto = {
 <section id="integração-sig-e-cálculo-de-risco" class="level2">
 <h2 class="anchored" data-anchor-id="integração-sig-e-cálculo-de-risco">6.Integração SIG e Cálculo de Risco</h2>
 <p>Com a amostra validada, definimos um limiar crítico. Na geotecnia, se a coesão for muito baixa (ex: &lt; 10 kPa), o solo é altamente suscetível à erosão hídrica. Acesse o link do trabalho https://www.mdpi.com/2073-4441/13/24/3621?utm_source=chatgpt.com</p>
-<div id="cell-17" class="cell">
+<div id="cell-18" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Parâmetros da Amostra</span></span>
@@ -401,7 +401,7 @@ window.Quarto = {
 <section id="mapeamento-espacial-simulação-sig" class="level2">
 <h2 class="anchored" data-anchor-id="mapeamento-espacial-simulação-sig">7. Mapeamento Espacial (Simulação SIG)</h2>
 <p>Integração da estatística com a geotecnologia para gerar um mapa de risco.</p>
-<div id="cell-19" class="cell">
+<div id="cell-20" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.ndimage <span class="im">import</span> gaussian_filter</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação de grade 50x50 (Pixels de um Satélite/SIG)</span></span>
@@ -416,7 +416,7 @@ window.Quarto = {
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A análise de variabilidade espacial é importante porque a erosão do solo não ocorre de forma uniforme, variando conforme relevo, tipo de solo e uso da terra. Com técnicas geoestatísticas como <strong>krigagem</strong>, <strong>semivariograma e IDW</strong>, é possível transformar dados pontuais em mapas contínuos, identificando áreas mais críticas. Isso melhora a precisão de modelos como o <strong>RUSLE</strong>, apoia decisões geotécnicas e contribui para o planejamento ambiental e a prevenção de riscos</p>
-<div id="cell-21" class="cell">
+<div id="cell-22" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar bibliotecas</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install numpy pandas matplotlib scikit<span class="op">-</span>learn pykrige</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>

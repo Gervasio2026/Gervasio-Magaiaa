@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-07-13">
+<meta name="description" content="Distribuições de Probabilidade,">
 
-<title>aula_2_distribuicao_de_probabilidade – Projeto PPEC</title>
+<title>Aula 2 - Introdução – Projeto PPEC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -210,9 +212,41 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 2 - Introdução</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PPEC</div>
+    <div class="quarto-category">Ensino</div>
+    <div class="quarto-category">Estatística</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Distribuições de Probabilidade,
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 13, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><a href="https://colab.research.google.com/github/britobruna/ESTATISTICA-PPEC0039/blob/main/Distribuicao_de_Probabilidade.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -325,7 +359,7 @@ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}
 <p>Neste exemplo, será considerada a situação previamente descrita, envolvendo corpos de prova de compósitos cimentícios reforçados com fibras. O objetivo é calcular a probabilidade de ocorrência de diferentes números de falhas (fissuração precoce) e representar graficamente essa distribuição.</p>
 <p>A utilização de linguagens de programação, como Python, permite automatizar cálculos e gerar visualizações que facilitam a interpretação dos resultados, sendo uma ferramenta amplamente empregada no planejamento e análise de experimentos.</p>
 </div>
-<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:663}}" data-outputid="6fb2a95b-5e60-4379-b83a-a1999fdfd99a">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:663}}" data-outputid="6fb2a95b-5e60-4379-b83a-a1999fdfd99a">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importação das bibliotecas</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -540,7 +574,7 @@ P(X &lt; 10) = P(Z &lt; -1)
 <p>Além da resolução analítica por padronização, a distribuição normal pode ser analisada por meio de ferramentas computacionais. O uso de Python permite calcular probabilidades de forma rápida e representar graficamente o comportamento da distribuição, facilitando a interpretação dos resultados experimentais.</p>
 <p>No exemplo a seguir, será calculada a probabilidade de um corpo de prova apresentar resistência à flexão inferior a 10 MPa, considerando média de 12 MPa e desvio padrão de 2 MPa.</p>
 </div>
-<div id="cell-42" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:489}}" data-outputid="df8ddc8a-6909-4765-93c7-e529184167ee">
+<div id="cell-43" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:489}}" data-outputid="df8ddc8a-6909-4765-93c7-e529184167ee">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
@@ -754,7 +788,7 @@ P(X \leq 1) \approx 0,5578
 <p>A implementação computacional permite calcular rapidamente as probabilidades associadas à distribuição de Poisson e representar graficamente o comportamento da variável aleatória.</p>
 <p>No exemplo a seguir, considera-se o caso em que o número médio de fissuras por área inspecionada é igual a 2. O objetivo é calcular as probabilidades para diferentes números de fissuras e visualizar a distribuição por meio de um gráfico de barras.</p>
 </div>
-<div id="cell-61" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:698}}" data-outputid="363c4b79-c9b0-46ce-ea29-36cb427fed6c">
+<div id="cell-62" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:698}}" data-outputid="363c4b79-c9b0-46ce-ea29-36cb427fed6c">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> poisson</span>
@@ -806,7 +840,7 @@ Probabilidade de exatamente 3 fissuras: 0.1804</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-62" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="c42bdc12-39c7-4d91-ca01-2b989e9c224e">
+<div id="cell-63" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="c42bdc12-39c7-4d91-ca01-2b989e9c224e">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> poisson</span>
