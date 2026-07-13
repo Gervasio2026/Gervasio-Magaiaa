@@ -10,15 +10,15 @@
     "objectID": "passo-a-passo.html#bem-vindo-ao-quarto",
     "href": "passo-a-passo.html#bem-vindo-ao-quarto",
     "title": "PPEC0039 - Introdução ao Quarto",
-    "section": "",
-    "text": "Um sistema de publicação científica e técnica de código aberto.\n\nUse cadernos Jupyter ou com marcação de texto simples em seu editor favorito.\nCrie conteúdo dinâmico com Python, R, Julia e Observável.\nPublicar artigos reprodutíveis, apresentações, painéis, sites, blogs e livros…\nCompartilhe conhecimento e insights."
+    "section": "Bem vindo ao QUARTO",
+    "text": "Bem vindo ao QUARTO\nUm sistema de publicação científica e técnica de código aberto.\n\nUse cadernos Jupyter ou com marcação de texto simples em seu editor favorito.\nCrie conteúdo dinâmico com Python, R, Julia e Observável.\nPublicar artigos reprodutíveis, apresentações, painéis, sites, blogs e livros…\nCompartilhe conhecimento e insights."
   },
   {
     "objectID": "passo-a-passo.html#a-tarefa-da-disciplina",
     "href": "passo-a-passo.html#a-tarefa-da-disciplina",
     "title": "PPEC0039 - Introdução ao Quarto",
-    "section": "",
-    "text": "Criar uma pagina pessoal usando o QUARTO.\nCriar um menu do tipo lista com notebooks produzidos durante a disciplina.\nPublicar a página usando o GitHub Pages."
+    "section": "A tarefa da disciplina",
+    "text": "A tarefa da disciplina\n\nCriar uma pagina pessoal usando o QUARTO.\nCriar um menu do tipo lista com notebooks produzidos durante a disciplina.\nPublicar a página usando o GitHub Pages."
   },
   {
     "objectID": "passo-a-passo.html#instalar-o-quarto",
@@ -158,7 +158,7 @@
     "href": "lista_disciplina.html",
     "title": "PPEC0039 - Estatística e Planejamento de Experimentos",
     "section": "",
-    "text": "Amostragem\n\n\ntécnicas de Amostragem\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 2 - Introdução\n\n\nDistribuições de Probabilidade,\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 3 - Introdução\n\n\nEstimação de Parâmetros\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 4 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 5 - Introdução\n\n\ntestes paramétricos tradicionais (como o Teste t e a ANOVA).\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 6 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 8 - Introdução\n\n\nPlanejamento de Experimentos\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 8 - Introdução\n\n\nPlanejamento de Experimentos.\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 9 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula_7 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Amostragem\n\n\ntécnicas de Amostragem\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 2 - Introdução\n\n\nDistribuições de Probabilidade,\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 3 - Introdução\n\n\nEstimação de Parâmetros\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 4 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 5 - Introdução\n\n\ntestes paramétricos tradicionais (como o Teste t e a ANOVA).\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 6 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 8 - Introdução\n\n\nPlanejamento de Experimentos\n\n\n\n\n\n\nJul 13, 2026\n\n\n\n\n\n\n\n\n\n\n\nAula 9 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula_7 - Introdução\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
